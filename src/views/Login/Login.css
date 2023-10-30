@@ -1,0 +1,135 @@
+.login-parent {
+  background-image: url("/assets/loginbg_scene.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.login-parent::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  mask: linear-gradient(90deg, white, transparent);
+  -webkit-mask: linear-gradient(90deg, white, transparent);
+}
+
+.login-overlay {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  background: aquamarine;
+  width: 500px;
+  height: 500px;
+  opacity: 75%;
+  mask: url("./assets/blob.svg");
+  -webkit-mask: url("./assets/blob.svg");
+}
+
+.login-content-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  /* align-items: flex-end;  */
+  /* justify-content: center; */
+  flex-direction: column;
+  z-index: 20;
+  padding: 0 var(--mainPaddingX);
+}
+
+.login-header-row {
+  /* position: absolute; */
+  /* border: 2px solid red; */
+  width: 100%;
+  padding: 5rem 0rem;
+}
+
+.login-form-parent {
+  /* border: 2px solid blue; */
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.login-form-card {
+  width: clamp(35%, 500px, 95%);
+  height: 450px;
+  border-radius: 3rem;
+  /* border-bottom-right-radius: 35%; */
+  background: linear-gradient(rgb(31, 30, 30), rgb(36, 33, 33));
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 0.5s ease;
+}
+
+.login-form-inner {
+  /* width: 100%;
+  height: 100%; */
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 0.5s ease;
+  transform: rotateY(0deg);
+  border: 2px solid pink;
+}
+
+.flip-card {
+  transform: rotateY(-180deg);
+}
+
+.form-side {
+  backface-visibility: hidden;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease;
+  padding: 2rem;
+
+  /* padding: 3rem; */
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.form {
+  height: 100%;
+  width: 100%;
+  /* padding: 3rem; */
+  /* padding: 3rem; */
+}
+
+.form-header {
+  text-align: center;
+  width: 100%;
+  /* border: 2px solid green; */
+  padding: 1.5rem 0;
+}
+
+.toggle-form-link-btn {
+  color: aquamarine;
+  font-weight: 700;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.toggle-form-link-btn:hover {
+  text-shadow: 1px 1px 1px white, 1px 1px 10px aquamarine;
+}
+
+@media screen and (max-width: 550px) {
+  .login-header-row {
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .login-form-parent {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,8 @@
+.app {
+  min-height: 100dvh;
+  max-width: 144rem;
+  border: 2px solid black;
+  margin: 0 auto;
+  overflow: hidden;
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.5), 1px 1px 5px white;
+}
